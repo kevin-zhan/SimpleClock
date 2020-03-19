@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIOverlays([]);
     Screen.keepOn(true);
   }
 
@@ -89,8 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:wakelock/wakelock.dart';
+import 'package:screen/screen.dart';
 
 import 'num_widget.dart';
 
@@ -12,11 +12,11 @@ void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft])
       .then((_) {
     runApp(new MyApp());
-    Wakelock.enable();
   });
 }
 
 class MyApp extends StatelessWidget {
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -61,6 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
     refreshTime();
   }
 
+
+  @override
+  void initState() {
+    super.initState();
+    Screen.keepOn(true);
+  }
+
   void refreshTime() {
     timer = Timer.periodic(Duration(seconds: 1), (_) {
       int nowHour = DateTime.now().hour;
@@ -73,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
-
 
   @override
   void dispose() {

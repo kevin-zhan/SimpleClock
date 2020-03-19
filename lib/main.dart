@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wakelock/wakelock.dart';
 
 import 'num_widget.dart';
 
@@ -11,6 +12,7 @@ void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft])
       .then((_) {
     runApp(new MyApp());
+    Wakelock.enable();
   });
 }
 

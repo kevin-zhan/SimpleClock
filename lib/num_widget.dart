@@ -9,16 +9,13 @@ class NumberWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(color: Color.fromARGB(50, 200, 200, 200), borderRadius: BorderRadius.all(Radius.circular(10))),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5, right: 5),
-        child: Text(
-          this.number.toString(),
-          textAlign: TextAlign.center,
-          style:
-              TextStyle(color: Color.fromARGB(200, 200, 200, 200), fontSize: 200, fontWeight: FontWeight.bold),
-        ),
+    return Container(
+      width: 100,
+      child: Text(
+        this.number.toString(),
+        textAlign: TextAlign.center,
+        style:
+            TextStyle(color: Color.fromARGB(255, 200, 200, 200), fontSize: 200, fontWeight: FontWeight.bold, fontFamily: "Oswald"),
       ),
     );
   }
@@ -35,16 +32,17 @@ class TimeBlockWidget extends StatelessWidget {
     int tenPos = timeNum ~/ 10;
     int onePos = timeNum % 10;
 
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: <Widget>[
-          NumberWidget(tenPos),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: NumberWidget(onePos),
-          )
-        ],
+    return Container(
+      width: 230,
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: Color.fromARGB(30, 200, 220, 200), borderRadius: BorderRadius.all(Radius.circular(8))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            NumberWidget(tenPos),
+            NumberWidget(onePos)
+          ],
+        ),
       ),
     );
   }

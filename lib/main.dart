@@ -103,10 +103,21 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                TimeBlockWidget(hour),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30),
-                  child: TimeBlockWidget(min),
+                Expanded(child: Container(
+                  constraints: BoxConstraints(minHeight: double.infinity),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 5, top: 30, bottom: 30),
+                    child: TimeBlockWidget(hour),
+                  ),
+                )),
+                Expanded(
+                  child: Container(
+                    constraints: BoxConstraints(minHeight: double.infinity),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5, right: 30, top: 30, bottom: 30),
+                      child: TimeBlockWidget(min),
+                    ),
+                  ),
                 ),
 
               ],

@@ -33,7 +33,6 @@ class TimeBlockWidget extends StatelessWidget {
     int onePos = timeNum % 10;
 
     return Container(
-      width: 230,
       child: DecoratedBox(
         decoration: BoxDecoration(color: Color.fromARGB(30, 200, 220, 200), borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Row(

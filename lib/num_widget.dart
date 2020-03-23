@@ -10,12 +10,19 @@ class NumberWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      child: Text(
-        this.number.toString(),
-        textAlign: TextAlign.center,
-        style:
-            TextStyle(color: Color.fromARGB(255, 200, 200, 200), fontSize: 200, fontWeight: FontWeight.bold, fontFamily: "Oswald"),
+      width: 110,
+      child: Baseline(
+        baseline: 220,
+        baselineType: TextBaseline.ideographic,
+        child: Text(
+          this.number.toString(),
+          textAlign: TextAlign.center,
+          style:
+          TextStyle(color: Color.fromARGB(255, 200, 200, 200),
+              fontSize: 200,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Oswald"),
+        ),
       ),
     );
   }
